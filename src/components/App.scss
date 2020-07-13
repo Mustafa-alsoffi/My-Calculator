@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap";
+
+$display-color: #555353;
+body{
+  
+}
+
+.App {
+  background: #596262 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 13px;
+  width: fit-content;
+  .display{
+    text-align: right;
+    
+    background: yellow 0% 0% no-repeat padding-box;
+    border-radius: 16px;
+
+  }
+}
+
+
+
+
+
+
