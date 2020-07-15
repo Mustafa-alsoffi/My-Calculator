@@ -1,20 +1,103 @@
 @import "~bootstrap/scss/bootstrap";
 
 $display-color: #555353;
-body{
-  
-}
+
 
 .App {
-  background: #596262 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
-  border-radius: 13px;
-  width: fit-content;
+
+
+background: #596262 0% 0% no-repeat padding-box;
+border: 1px solid #707070;
+border-radius: 13px;
+height: 100%;
+
+
   .display{
-    text-align: right;
-    
-    background: yellow 0% 0% no-repeat padding-box;
+    // min-width: 400px;
+    height: 50px;
+    background: #555353 0% 0% no-repeat padding-box;
     border-radius: 16px;
+    color: white;
+    text-align: right;
+    font: regular 50px/67px Monaco;
+  }
+  .keys-container{
+    // background-color: green;
+  
+    padding: 0px;
+    .clear{
+      height: 50px;
+background: #A26464 0% 0% no-repeat padding-box;
+border-radius: 36px;
+text-align: center;
+font: Regular 30px/36px Helvetica Neue;
+letter-spacing: 0px;
+color: #FFFFFF;
+    }
+  }
+  .operator-division{
+  
+    height: 40px;
+    
+    background: #666666 0% 0% no-repeat padding-box;
+    border: 0.10000000149011612px solid #707070;
+    border-radius: 33px;
+    text-align: center;
+font: Regular 30px/36px Helvetica Neue;
+letter-spacing: 0px;
+color: #FFFFFF;
+  }
+  .operator{
+    height: 50px;
+    // width:50px;
+    border-radius: 10px;
+background: #666666 0% 0% no-repeat padding-box;
+border: 0.10000000149011612px solid #707070;
+text-align: center;
+font: Regular 30px/41px Monaco;
+letter-spacing: 0px;
+color: #CCCACA;
+  }
+      .equal{
+     
+      height: 130px;
+      // width: 50px;
+      margin: 5px;
+        
+
+      background: #555353 0% 0%;
+      border-radius: 30px;
+      color: white;
+      text-align: center;
+    }
+  .btn {
+
+ height: 70px;
+//  width: 70px;
+background: #CCCACA 0% 0% no-repeat padding-box;
+border: 0.10000000149011612px solid #707070;
+border-radius: 20px;
+text-align: center;
+vertical-align: middle;
+font: Regular 40px Monaco;
+letter-spacing: 0px;
+color: #100E0E;
+span{
+  
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+font: Regular 40px Monaco;
+letter-spacing: 0px;
+color: #100E0E;
+}
+  }
+  .zero{
+   width: 54%;
+
+background: #CCCACA 0% 0% no-repeat padding-box;
+border: 0.10000000149011612px solid #707070;
+border-radius: 20px;
 
   }
 }
@@ -22,5 +105,14 @@ body{
 
 
 
+.parentrow{
+// background-color: red;
+// width: 90%;
+}
 
-
+.box-1{
+  // background-color: palevioletred;
+}
+.box-2{
+  // background-color: deepskyblue;
+}
