@@ -1,11 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
-$display-color: #555353;
-.wind{
+
+body{
 min-height: 100vh;
 }
 
-.App {
+.Calculator{
 
 
 background: #596262 0% 0% no-repeat padding-box;
@@ -16,7 +16,7 @@ height: 500px;
 
 
   .display{
-    // min-width: 400px;
+   
     min-height: 70px;
     background: #555353 0% 0% no-repeat padding-box;
     border-radius: 16px;
@@ -50,12 +50,8 @@ font: bold 30px/36px Helvetica Neue;
 letter-spacing: 0px;
 color: #FFFFFF;
   }
-  .keysRow{
-    background-color: coral;
-    
-    height: 100%;
-  }
-  .operator{
+
+  .operators{
     height: 50px;
     // width:50px;
     border-radius: 10px;
@@ -108,20 +104,4 @@ border-radius: 20px;
 }
 
 
-.red{
-  background-color: red;
-  
-}
 
-.parentrow{
-// background-color: red;
-// width: 90%;
-}
-
-.box-1{
-  // background-color: palevioletred;
-  
-}
-.box-2{
-  // background-color: deepskyblue;
-}
