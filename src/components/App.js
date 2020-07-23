@@ -1,36 +1,67 @@
-import React from 'react';
+import React, { useState} from 'react';
 import './App.scss';
 const arr = ['7', '8', '9', '4', '5', '6', '1', '2', '3'
 ];
+
+
+const valuesArr = [];
+
+
+
 function Calculator() {
+
+  const [num, setNum] = useState();
+
+
   return (
-    <div className="Calculator col-xs-11 col-sm-6 col-md-6 my-auto mx-auto">
+    <div className="Calculator col-xs-11 col-sm-6 col-md-5 my-auto mx-auto">
       <div className='container-fluid'>
-              <div className='row'>
-        <div id='display' className='display col-12 mx-auto'>0</div>
-      </div>
+        <div className='row'>
+          <div id='display' className='display col-12 mx-auto'>{num}</div>
+        </div>
       </div>
 
-  
-
-        <Keys />
+      <Keys set={setNum} />
 
     </div>
   );
 }
 
-function Keys() {
+function Keys(props) {
+  const getValue = (event) => {
+    // Received the value here
+    if (event.target.value != '=' && event.target.value != 'ac') valuesArr.push(event.target.value);
+    switch (event.target.value) {
+      case '=':
+
+        try {
+          props.set(eval(valuesArr.join('')))
+          valuesArr.length = 0;
+        } catch {
+          console.log('Incomplete expression')
+        }
+        break;
+      case 'ac':
+        valuesArr.length = 0;
+        props.set('0')
+        break;
+      default:
+
+        props.set(valuesArr.join(''))
+    }
+
+  };
+
   return (
     <div className='keys-container container-fluid'>
 
+      <div className='container-fluid'>
+        <div className='row justify-content-center'>
+          <button value='ac' onClick={getValue} className='clear col-5 my-1 mr-2 p-2'>AC</button>
+          <button value='/' onClick={getValue} className='operator-division col-3 m-2 my-2 p-1 mr-5'>/</button>
 
-    <div className='container-fluid'>
-            <div className='row justify-content-center'>
-        <div type='button' className='clear col-5 my-1 mr-2 p-2'>AC</div>
-        <div type='button' className='operator-division col-3 m-2 my-2 p-1 mr-5'>/</div>
-
+        </div>
       </div>
-    </div>
 
 
       <div className='row ml-1 g-0'>
@@ -38,23 +69,23 @@ function Keys() {
         <div className='col-9'>
           <div className='row row-cols-4 g-0 justify-content-center'>
             {arr.map((val, i) => (
-              <div key={i} type='button' className='btn col-3 m-2'>{val}</div>
+              <button key={i} value={val} onClick={getValue} className='btn col-3 m-2'>{val}</button>
 
             ))}
-            <div type='button' className='zero btn col m-2'><span>0</span></div>
+            <button value='0' onClick={getValue} className='zero btn col m-2'>0</button>
 
-            <div type='button' className='btn col-3 m-2'>.</div>
+            <button value='.' onClick={getValue} className='btn col-3 m-2'>.</button>
           </div>
 
 
         </div>
 
-        <div className='col-3'>
+        <div className='operators-container col-3'>
 
-          <div type='button' className='operators m-2'>x</div>
-          <div type='button' className='operators m-2'>-</div>
-          <div type='button' className='operators m-2'>+</div>
-          <div type='button' className='equal d-flex justify-content-center align-items-center'>=</div>
+          <button value='*' onClick={getValue} className='operators m-2'>x</button>
+          <button value='-' onClick={getValue} className='operators m-2'>-</button>
+          <button value='+' onClick={getValue} className='operators m-2'>+</button>
+          <button value='=' onClick={getValue} className='equal d-flex justify-content-center align-items-center'>=</button>
 
 
         </div>
